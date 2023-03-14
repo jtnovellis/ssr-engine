@@ -1,11 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  color: red;
+`
 
 export function Home() {
   return (
     <div>
-      <h1>Hello World from Home</h1>
-      <Link to="about">About</Link>
+      <Title>Hello World from Home</Title>
+      <a href="about">About</a>
     </div>
   );
 }

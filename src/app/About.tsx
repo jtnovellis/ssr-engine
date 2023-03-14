@@ -6,6 +6,7 @@ export function About() {
     <div>
       <h1>Hello World from About</h1>
       <button onClick={() => setCount(prev => prev + 1)}>{count}</button>
+      <a href="/">Home</a>
     </div>
   );
 }

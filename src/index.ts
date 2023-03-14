@@ -2,7 +2,6 @@ import express, { Express, Response, Request } from 'express';
 import config from './config';
 import { render } from './render';
 
-
 const app: Express = express();
 
 app.use(express.static('dist'));

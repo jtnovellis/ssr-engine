@@ -1,4 +1,4 @@
-export const template = (html: string): string => {
+export const template = (html: string, styles: string): string => {
   return(
     `
     <!DOCTYPE html>
@@ -12,6 +12,7 @@ export const template = (html: string): string => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      ${styles}
       <title>New App</title>
     </head>
     
