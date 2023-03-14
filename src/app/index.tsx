@@ -1,25 +1,14 @@
 import React from 'react'
 import { hydrateRoot } from 'react-dom/client'
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { About } from './About'
+import { BrowserRouter } from 'react-router-dom'
 import { App } from './App'
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <App />,
-//     children: [
-//       {
-//         path: 'about',
-//         element: <About />,
-//       }
-//     ]
-//   },
-// ])
+const container = document.getElementById('app')
+const initialProps = JSON.parse(decodeURIComponent(container.getAttribute('data-initial-props')))
 
-hydrateRoot(document.getElementById('app'), 
+hydrateRoot(container, 
   <BrowserRouter>
-    <App />
+    <App {...initialProps} />
   </BrowserRouter>
 )
 

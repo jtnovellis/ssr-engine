@@ -1,4 +1,10 @@
-export const template = (html: string, styles: string): string => {
+type Template = {
+  html: string,
+  styles: string,
+  initialProps: string
+}
+
+export const template = ({ html, styles, initialProps }: Template): string => {
   return(
     `
     <!DOCTYPE html>
@@ -13,11 +19,11 @@ export const template = (html: string, styles: string): string => {
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       ${styles}
-      <title>New App</title>
+      <title>SSR Engine</title>
     </head>
     
     <body>
-      <div id="app">${html}</div>
+      <div id="app" data-initial-props="${encodeURIComponent(initialProps)}">${html}</div>
       <script src="app.js" type="text/javascript"></script>
     </body>
     

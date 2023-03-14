@@ -11,8 +11,9 @@ if (config.env === 'development') {
   app.use(express.static('dist'));
 }
 
-app.get('*', (req: Request, res: Response) => {
-  res.send(render(req.url));
+app.get('*', async (req: Request, res: Response) => {
+  const html = await render(req.url);
+  res.send(html);
 });
 
 app.listen(config.port, () => {

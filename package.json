@@ -9,9 +9,11 @@
 		"build-server": "webpack --config webpack.config.js",
 		"build-client": "webpack --config webpack.config.client.js",
 		"build-dev": "NODE_ENV=development npm run build-server && node --inspect dist/index.js",
-		"dev": "nodemon --ext ts --exec \"npm run build-dev\"",
-		"build": "NODE_ENV=development npm run build-server && NODE_ENV=development npm run build-client",
-		"start": "NODE_ENV=development npm run build && NODE_ENV=development node dist/index.js"
+		"dev:server": "nodemon --ext ts --exec \"npm run build-dev\"",
+		"build:dev": "NODE_ENV=development npm run build-server && NODE_ENV=development npm run build-client",
+		"dev": "NODE_ENV=development npm run build:dev && NODE_ENV=development node dist/index.js",
+		"build:prod": "NODE_ENV=production npm run build-server && NODE_ENV=production npm run build-client",
+		"start": "NODE_ENV=production npm run build:prod && NODE_ENV=production node dist/index.js"
 	},
 	"devDependencies": {
 		"@swc/cli": "0.1.62",
