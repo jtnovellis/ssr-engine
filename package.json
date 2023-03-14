@@ -10,8 +10,8 @@
 		"build-client": "webpack --config webpack.config.client.js",
 		"build-dev": "NODE_ENV=development npm run build-server && node --inspect dist/index.js",
 		"dev": "nodemon --ext ts --exec \"npm run build-dev\"",
-		"build": "NODE_ENV=production npm run build-server && NODE_ENV=production npm run build-client",
-		"start": "NODE_ENV=production npm run build && NODE_ENV=production node dist/index.js"
+		"build": "NODE_ENV=development npm run build-server && NODE_ENV=development npm run build-client",
+		"start": "NODE_ENV=development npm run build && NODE_ENV=development node dist/index.js"
 	},
 	"devDependencies": {
 		"@swc/cli": "0.1.62",
@@ -19,19 +19,24 @@
 		"@types/express": "4.17.17",
 		"@types/node": "18.15.2",
 		"@types/react": "18.0.28",
+		"@types/react-dev-utils": "9.0.11",
 		"@types/react-dom": "18.0.11",
-		"@types/styled-components": "^5.1.26",
+		"@types/styled-components": "5.1.26",
+		"@types/webpack-hot-middleware": "2.25.6",
 		"@typescript-eslint/eslint-plugin": "5.55.0",
 		"@typescript-eslint/parser": "5.55.0",
 		"eslint": "8.0.1",
 		"eslint-config-standard-with-typescript": "34.0.0",
 		"eslint-plugin-react": "7.32.2",
 		"nodemon": "2.0.21",
+		"react-dev-utils": "12.0.1",
 		"swc-loader": "0.2.3",
 		"typescript": "*",
 		"webpack": "5.76.1",
 		"webpack-cli": "5.0.1",
+		"webpack-dev-middleware": "6.0.1",
 		"webpack-dev-server": "4.11.1",
+		"webpack-hot-middleware": "2.25.3",
 		"webpack-node-externals": "3.0.0"
 	},
 	"dependencies": {
@@ -40,6 +45,6 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-router-dom": "6.9.0",
-		"styled-components": "^5.3.9"
+		"styled-components": "5.3.9"
 	}
 }
