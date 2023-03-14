@@ -4,6 +4,8 @@ import { App } from "../app/App";
 import { StaticRouter } from 'react-router-dom/server'
 import { template } from "./template";
 
+
+
 export function render(path: string) {
   const stream = renderToString(
     <StaticRouter location={path}>

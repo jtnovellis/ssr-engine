@@ -1,9 +1,23 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { hydrateRoot } from 'react-dom/client'
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { About } from './About'
 import { App } from './App'
 
-createRoot(document.getElementById('app')).render(
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <App />,
+//     children: [
+//       {
+//         path: 'about',
+//         element: <About />,
+//       }
+//     ]
+//   },
+// ])
+
+hydrateRoot(document.getElementById('app'), 
   <BrowserRouter>
     <App />
   </BrowserRouter>
